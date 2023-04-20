@@ -128,6 +128,45 @@
   </div>
 </section>
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            The paradigm of large-scale pre-training followed by downstream fine-tuning has been widely employed in various object detection algorithms. In this paper, we reveal discrepancies in data, model, and task between the pre-training and fine-tuning procedure in existing practices, which implicitly limit the detector's performance, generalization ability, and convergence speed. To this end, we propose AlignDet, a unified pre-training framework that can be adapted to various existing detectors to alleviate the discrepancies. AlignDet decouples the pre-training process into two stages, i.e., image-domain and box-domain pre-training. The image-domain pre-training optimizes the detection backbone to capture holistic visual abstraction, and box-domain pre-training learns instance-level semantics and task-aware concepts to initialize the parts out of the backbone. By incorporating the self-supervised pretrained backbones, we can pre-train all modules for various detectors in an unsupervised paradigm. As depicted in Figure 1, extensive experiments demonstrate that AlignDet can achieve significant improvements across diverse protocols, such as detection algorithm, model backbone, data setting, and training schedule. For example, AlignDet improves FCOS by 5.3 mAP, RetinaNet by 2.1 mAP, Faster R-CNN by 3.3 mAP, and DETR by 2.3 mAP under fewer epochs.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Method. -->
+    <div class="columns is-centered">
+      <div class="column is-two-fifths">
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified"></div>
+          <p>
+            The proposed unified open-vocabulary segmentation aims to optimize an all-in-one model to obtain semantic, instance, and panoptic segmentation results on arbitrary categories.
+            To address this novel task,  we propose a novel framework to accomplish unified and universal open vocabulary segmentation in this paper, termed as FreeSeg.
+            FreeSeg advocates a two-stage framework, with the first stage extracting universe mask proposals and the second stage leveraging CLIP to perform zero-shot classification on the masks which are generated in the first stage.
+          </p>
+        <br/>
+        <div class="hero-body">
+            <img src="./static/images/framework.png"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+          </div>
+        <br/>
+        <!--/ Interpolating. -->
+
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
@@ -135,7 +174,20 @@
                  class="interpolation-image"
                  alt="Interpolate start reference image."/>
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf"></span> Comparison with other pre-training methods on data, models and tasks.
+        <span class="dnerf"></span> Comparison with other box-level pre-training methods (e.g., InsLoc and SoCo) on data, models and tasks.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/pipeline.bmp"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf"></span> The pipeline of our AlignDet.
       </h2>
     </div>
   </div>
