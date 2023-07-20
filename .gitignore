@@ -129,12 +129,6 @@ featmaps/
 *.py~
 *.sh~
 
-# npy
-*.npy
-
-# json
-*.txt
-
 # archive
 *.tar
 *.tar.gz
