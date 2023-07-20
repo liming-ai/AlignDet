@@ -57,7 +57,7 @@ optimizer.lr=3e-2 optimizer.weight_decay=5e-5  \ # adjust lr and wd
 ## Checkpoints and Logs (TODO)
 ### Different methods
 | Method (Backbone) | Pre-training Checkpoint | Pre-training Log | Fine-tuning Checkpoint | Fine-tuning Log |
-|:------------:|:-----------------------:|:----------------:|:----------------------:|:---------------:|
+|:------------------------:|:-----------------------:|:----------------:|:----------------------:|:---------------:|
 | FCOS (ResNet-50)         |                         |                  |                        |                 |
 | RetinaNet (ResNet-50)    |                         |                  |                        |                 |
 | Faster R-CNN (ResNet-50) |                         |                  |                        |                 |
