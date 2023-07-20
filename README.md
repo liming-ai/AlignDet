@@ -29,7 +29,7 @@ The folder `filtered_proposals` can be downloaded in [this link]().
 The folder `semi_supervised_annotations` can be downloaded in [this link]().
 
 
-## Environments
+## Environments (There are some bugs, we will update ASAP)
 ```bash
 # Sorry our code is not based on latest mmdet 3.0+
 pip3 install openmim seaborn
@@ -85,7 +85,7 @@ optimizer.lr=3e-2 optimizer.weight_decay=5e-5  \ # adjust lr and wd
 | Swin-Base    |                         |                  |                        |                 |
 
 
-## Citation
+<!-- ## Citation
 If you find our work to be useful for your research, please consider citing.
 ```
 @article{aligndet,
@@ -93,4 +93,4 @@ If you find our work to be useful for your research, please consider citing.
   journal={arXiv preprint arXiv:2306.03514},
   year={2023}
 }
-```
+``` -->
