@@ -129,11 +129,6 @@ featmaps/
 *.py~
 *.sh~
 
-# figures
-*.png
-*.pdf
-*.jpg
-
 # npy
 *.npy
 
