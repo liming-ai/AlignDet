@@ -138,7 +138,7 @@ featmaps/
 *.npy
 
 # json
-*.json
+*.txt
 
 # archive
 *.tar
