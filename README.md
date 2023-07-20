@@ -25,14 +25,15 @@ data
 │   └── val2017
 ```
 
-The `filtered_proposals` can be downloaded in [this link]().
-The `semi_supervised_annotations` can be downloaded in [this link]().
+The folder `filtered_proposals` can be downloaded in [this link]().
+The folder `semi_supervised_annotations` can be downloaded in [this link]().
 
 
 ## Environments
 ```bash
+# Sorry our code is not based on latest mmdet 3.0+
 pip3 install openmim seaborn
-mim install mmselfsup mmdet
+mim install mmselfsup==0.9.1 mmdet==2.25.2 mmcv-full==1.6.0
 ```
 
 ## Pre-training and Fine-tuning
@@ -49,7 +50,7 @@ work_dirs/selfsup_mask-rcnn/epoch_12.pth  \ # pretrain weights
 work_dirs/selfsup_mask-rcnn/final_model.pth  # finetune weights
 ```
 
-2. Fine-tuning models like normal mmdet training process, usually the learning rate is increased by 1.5 times, and the weight decay is reduced to half of the original setting.
+2. Fine-tuning models like normal mmdet training process, usually the learning rate is increased by 1.5 times, and the weight decay is reduced to half of the original setting. Please refer to the released logs for more details.
 ```bash
 bash tools/dist_train.sh configs/coco/mask_rcnn_r50_fpn_1x_coco.py 8 \
 --cfg-options load_from=work_dirs/selfsup_mask-rcnn/final_model.pth \ # load weights
