@@ -56,13 +56,17 @@ optimizer.lr=3e-2 optimizer.weight_decay=5e-5  \ # adjust lr and wd
 
 ## Checkpoints and Logs (TODO)
 ### Different methods with ResNet-50 backbone
-| Method (ResNet-50) | Pre-training Checkpoint | Pre-training Log | Fine-tuning Checkpoint | Fine-tuning Log |
+| Method (Backbone) | Pre-training Checkpoint | Pre-training Log | Fine-tuning Checkpoint | Fine-tuning Log |
 |:------------:|:-----------------------:|:----------------:|:----------------------:|:---------------:|
-| FCOS         |                         |                  |                        |                 |
-| RetinaNet    |                         |                  |                        |                 |
-| Faster R-CNN |                         |                  |                        |                 |
-| Mask R-CNN   |                         |                  |                        |                 |
-| DETR         |                         |                  |                        |                 |
+| FCOS (ResNet-50)         |                         |                  |                        |                 |
+| RetinaNet (ResNet-50)    |                         |                  |                        |                 |
+| Faster R-CNN (ResNet-50) |                         |                  |                        |                 |
+| Mask R-CNN (ResNet-50)   |                         |                  |                        |                 |
+| DETR  (ResNet-50)        |                         |                  |                        |                 |
+| SimMIM  (Swin-Base)      |                         |                  |                        |                 |
+| CBNet v2  (Swin-Large)   |                         |                  |                        |                 |
+
+
 ### Mask R-CNN with different backbones
 | Backbone | Pre-training Checkpoint | Pre-training Log | Fine-tuning Checkpoint | Fine-tuning Log |
 |:------------:|:-----------------------:|:----------------:|:----------------------:|:---------------:|
