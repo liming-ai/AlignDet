@@ -28,13 +28,13 @@ pip3 install openmim seaborn
 mim install mmselfsup mmdet
 ```
 
-# Pre-training and Fine-tuning
-## Pre-training Example
+## Pre-training and Fine-tuning
+### Pre-training
 ```bash
 bash tools/dist_train.sh configs/selfsup/mask_rcnn.py 8 --work-dir work_dirs/selfsup_mask-rcnn
 ```
 
-## Fine-tuning Example
+### Fine-tuning
 1. Using `tools/model_converters/extract_detector_weights.py` to extract the weights.
 ```bash
 python3 tools/model_converters/extract_detector_weights.py \
@@ -50,3 +50,35 @@ optimizer.lr=3e-2 optimizer.weight_decay=5e-5  \ # adjust lr and wd
 --work-dir work_dirs/finetune_mask-rcnn_1x_coco_lr3e-2_wd5e-5
 ```
 
+## TODO
+- [ ] Release json files used for pre-training and semi-supervised fine-tuning.
+- [ ] Release checkpoints and logs.
+
+## Checkpoints and Logs (TODO)
+### Different methods with ResNet-50 backbone
+| Method (ResNet-50) | Pre-training Checkpoint | Pre-training Log | Fine-tuning Checkpoint | Fine-tuning Log |
+|:------------:|:-----------------------:|:----------------:|:----------------------:|:---------------:|
+| FCOS         |                         |                  |                        |                 |
+| RetinaNet    |                         |                  |                        |                 |
+| Faster R-CNN |                         |                  |                        |                 |
+| Mask R-CNN   |                         |                  |                        |                 |
+| DETR         |                         |                  |                        |                 |
+### Mask R-CNN with different backbones
+| Backbone | Pre-training Checkpoint | Pre-training Log | Fine-tuning Checkpoint | Fine-tuning Log |
+|:------------:|:-----------------------:|:----------------:|:----------------------:|:---------------:|
+| MobileNet v2 |                         |                  |                        |                 |
+| ResNet-18    |                         |                  |                        |                 |
+| ResNet-50    |                         |                  |                        |                 |
+| Swin-Small   |                         |                  |                        |                 |
+| Swin-Base    |                         |                  |                        |                 |
+
+
+## Citation
+If you find our work to be useful for your research, please consider citing.
+```
+@article{aligndet,
+  title={AlignDet: Aligning Pre-training and Fine-tuning in Object Detection},
+  journal={arXiv preprint arXiv:2306.03514},
+  year={2023}
+}
+```
