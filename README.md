@@ -7,7 +7,10 @@ Official PyTorch Implementation of [AlignDet: Aligning Pre-training and Fine-tun
 
 Comparison with other self-supervised pre-training methods on data, models and tasks aspects. AlignDet achieves more efficient, adequate and detection-oriented pre-training
 
-![](./images/comparison.bmp)
+![](./images/comparison.png)
+
+
+
 
 ## Data Download
 Please download the [COCO 2017 dataset](https://cocodataset.org/), and the folder structure is:
