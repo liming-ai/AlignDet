@@ -61,6 +61,7 @@ optimizer.lr=3e-2 optimizer.weight_decay=5e-5  \ # adjust lr and wd
 ```
 
 ## TODO
+- [ ] Environment preparation tutorial.
 - [ ] Release json files used for pre-training and semi-supervised fine-tuning.
 - [ ] Release checkpoints and logs.
 
