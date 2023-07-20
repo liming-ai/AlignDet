@@ -9,7 +9,9 @@ Comparison with other self-supervised pre-training methods on data, models and t
 
 ![](./images/comparison.png)
 
+Our pipeline takes full advantage of the existing pre-trained backbones to efficiently pre-train other modules. By incorporating self-supervised pre-trained backbones, we make the first attempt to fully pre-train various detectors using a completely unsupervised paradigm.
 
+![](./images/pipeline.png)
 
 
 ## Data Download
