@@ -132,3 +132,7 @@ featmaps/
 # archive
 *.tar
 *.tar.gz
+
+# soft links
+data
+!*/data
