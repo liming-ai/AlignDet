@@ -78,18 +78,18 @@ All the checkpoints and logs will be uploaded to [this Google Drive Folder](http
 | Faster R-CNN (R50)       |                         |                  |                        |                 |
 | Mask R-CNN (R50)         |                         |                  |                        |                 |
 | DETR  (R50)              |                         |                  |                        |                 |
-| SimMIM (Swin-B)      |                         |                  |                        |                 |
-| CBNet v2 (Swin-L)   |                         |                  |                        |                 |
+| SimMIM (Swin-B)          |                         |                  |                        |                 |
+| CBNet v2 (Swin-L)        |                         |                  |                        |                 |
 
 
 ### Mask R-CNN with different backbones
 | Backbone | Pre-training Checkpoint | Pre-training Log | Fine-tuning Checkpoint | Fine-tuning Log |
-|:----------------:|:-----------------------:|:----------------:|:----------------------:|:---------------:|
-| MobileNet v2     |                         |                  |                        |                 |
-| ResNet-18        |                         |                  |                        |                 |
-| ResNet-50        |                         |                  |                        |                 |
-| Swin-Small       |                         |                  |                        |                 |
-| Swin-Base        |                         |                  |                        |                 |
+|:--------------------:|:-----------------------:|:----------------:|:----------------------:|:---------------:|
+| MobileNet v2         |                         |                  |                        |                 |
+| ResNet-18            |                         |                  |                        |                 |
+| ResNet-50            |                         |                  |                        |                 |
+| Swin-Small           |                         |                  |                        |                 |
+| Swin-Base            |                         |                  |                        |                 |
 
 
 ## Citation
