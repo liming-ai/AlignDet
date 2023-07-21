@@ -29,11 +29,10 @@ The folder `filtered_proposals` can be downloaded in [this link]().
 The folder `semi_supervised_annotations` can be downloaded in [this link]().
 
 
-## Environments (There are some bugs, we will update ASAP)
+## Environments
 ```bash
 # Sorry our code is not based on latest mmdet 3.0+
-pip3 install openmim seaborn
-mim install mmselfsup==0.9.1 mmdet==2.25.2 mmcv-full==1.6.0
+pip3 install -r requirements.txt
 ```
 
 ## Pre-training and Fine-tuning
@@ -59,7 +58,7 @@ optimizer.lr=3e-2 optimizer.weight_decay=5e-5  \ # adjust lr and wd
 ```
 
 ## TODO
-- [ ] Environment preparation tutorial.
+- [x] Environment preparation tutorial.
 - [ ] Release json files used for pre-training and semi-supervised fine-tuning.
 - [ ] Release checkpoints and logs.
 
