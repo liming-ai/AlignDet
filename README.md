@@ -85,7 +85,7 @@ All the checkpoints and logs will be uploaded to [this Google Drive Folder](http
 ### Mask R-CNN with different backbones
 | Backbone | Pre-training Checkpoint | Pre-training Log | Fine-tuning Checkpoint | Fine-tuning Log |
 |:---------------:|:-----------------------:|:----------------:|:----------------------:|:---------------:|
-| MobileNetv2     |                         |                  |                        |                 |
+| MobileNet v2     |                         |                  |                        |                 |
 | ResNet-18       |                         |                  |                        |                 |
 | ResNet-50       |                         |                  |                        |                 |
 | Swin-Small      |                         |                  |                        |                 |
