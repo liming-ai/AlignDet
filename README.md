@@ -27,7 +27,7 @@ data
 │   └── val2017
 ```
 
-The folder `filtered_proposals` can be downloaded in [this link]().
+The folder `filtered_proposals` can be downloaded in [Google Drive](https://drive.google.com/file/d/1AR1xXyeeLowHFXpS0hGB6VcORLxi9C2o/view?usp=sharing).
 The folder `semi_supervised_annotations` can be downloaded in [this link]().
 
 
