@@ -99,6 +99,6 @@ If you find our work to be useful for your research, please consider citing.
   title={AlignDet: Aligning Pre-training and Fine-tuning in Object Detection},
   author={Ming Li and Jie Wu and Xionghui Wang and Chen Chen and Jie Qin and Xuefeng Xiao and Rui Wang and Min Zheng and Xin Pan},
   journal={arXiv preprint arXiv:2307.11077},
-  year={2019}
+  year={2023}
 }
 ```
