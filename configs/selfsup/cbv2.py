@@ -193,7 +193,7 @@ custom_hooks = [
     dict(type='MomentumUpdateHook'),
     dict(type='MMDetWandbHook',
              init_kwargs={
-                'project': 'I2B',
+                'project': 'AlignDet',
                 'group': 'pretrain'},
              interval=50,
              num_eval_images=0,

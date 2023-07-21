@@ -31,11 +31,10 @@ The folder `filtered_proposals` can be downloaded in [this link]().
 The folder `semi_supervised_annotations` can be downloaded in [this link]().
 
 
-## Environments (There are some bugs, we will update ASAP)
+## Environments
 ```bash
 # Sorry our code is not based on latest mmdet 3.0+
-pip3 install openmim seaborn
-mim install mmselfsup==0.9.1 mmdet==2.25.2 mmcv-full==1.6.0
+pip3 install -r requirements.txt
 ```
 
 ## Pre-training and Fine-tuning
@@ -62,7 +61,7 @@ optimizer.lr=3e-2 optimizer.weight_decay=5e-5  \ # adjust lr and wd
 
 ## TODO
 - [x] Code release.
-- [ ] Environment preparation tutorial.
+- [x] Environment preparation tutorial.
 - [ ] Release json files used for pre-training and semi-supervised fine-tuning.
 - [ ] Release checkpoints and logs.
 
@@ -89,12 +88,15 @@ optimizer.lr=3e-2 optimizer.weight_decay=5e-5  \ # adjust lr and wd
 | Swin-Base    |                         |                  |                        |                 |
 
 
-<!-- ## Citation
+## Citation
 If you find our work to be useful for your research, please consider citing.
 ```
-@article{aligndet,
-  title={AlignDet: Aligning Pre-training and Fine-tuning in Object Detection},
-  journal={arXiv preprint arXiv:2306.03514},
-  year={2023}
+@misc{aligndet,
+      title={AlignDet: Aligning Pre-training and Fine-tuning in Object Detection},
+      author={Ming Li and Jie Wu and Xionghui Wang and Chen Chen and Jie Qin and Xuefeng Xiao and Rui Wang and Min Zheng and Xin Pan},
+      year={2023},
+      eprint={2307.11077},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
 }
-``` -->
+```

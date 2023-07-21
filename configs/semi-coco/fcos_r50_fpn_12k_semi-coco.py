@@ -19,7 +19,7 @@ custom_hooks = [
     dict(type='NumClassCheckHook'),
     dict(type='MMDetWandbHook',
              init_kwargs={
-                'project': 'I2B',
+                'project': 'AlignDet',
                 'group': 'semi-coco'},
              interval=50,
              num_eval_images=0,
