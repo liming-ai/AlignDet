@@ -1,5 +1,5 @@
 # AlignDet: Aligning Pre-training and Fine-tuning in Object Detection
-Official PyTorch Implementation of [AlignDet: Aligning Pre-training and Fine-tuning in Object Detection (ICCV 2023)](http://arxiv.org)
+Official PyTorch Implementation of [AlignDet: Aligning Pre-training and Fine-tuning in Object Detection (ICCV 2023)](https://arxiv.org/abs/2307.11077)
 * Existing detection algorithms are constrained by the data, model, and task discrepancies between pre-training and fine-tuning.
 * AlignDet aligns these discrepancies in an efficient and unsupervised paradigm, leading to significant performance improvements across different settings.
 
