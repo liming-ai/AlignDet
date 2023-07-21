@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="AlignDet pre-trains all the modules for all detectors in an efficient manner.">
+  <meta name="keywords" content="Self-supervised Learning, Detection">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AlignDet: Aligning Pre-training and Fine-tuning in Object Detection</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">AlignDet: Aligning Pre-training and Fine-tuning in Object Detection</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://liming-ai.github.io/">Ming Li</a><sup>1*</sup>,</span>
+            <span class="author-block">
+              <a href="https://wujie1010.github.io/">Jie Wu</a><sup>1*</sup>,</span>
+            <span class="author-block">
+              <a >Xionghui Wang</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.crcv.ucf.edu/chenchen/index.html">Chen Chen</a><sup>2</sup>,
+            </span>
+            <br>
+            <span class="author-block">
+              <a >Jie Qin</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a >Xuefeng Xiao</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a >Rui Wang</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a >Min Zheng</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a >Xin Pan</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><font size=3>(* denotes equal contribution)</font></span><br>
+            <span class="author-block"><sup>1</sup>ByteDance Inc,</span>
+            <span class="author-block"><sup>2</sup>Center for Research in Computer Vision, University of Central Florida</span><br>
+            <span class="author-block"><b><font size=5>ICCV 2023</font></b></span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- arXiv Abstract Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2307.11077"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/liming-ai/AlignDet"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/motivation.bmp"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf"></span> There are <b>data</b>, <b>model</b>, and <b>task</b> discrepancies between the pre-training and fine-tuning.<br>Aligning these discrepancies achieves significant improvements across various settings on COCO.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            The paradigm of large-scale pre-training followed by downstream fine-tuning has been widely employed in various object detection algorithms. In this paper, we reveal discrepancies in data, model, and task between the pre-training and fine-tuning procedure in existing practices, which implicitly limit the detector's performance, generalization ability, and convergence speed. To this end, we propose AlignDet, a unified pre-training framework that can be adapted to various existing detectors to alleviate the discrepancies. AlignDet decouples the pre-training process into two stages, i.e., image-domain and box-domain pre-training. The image-domain pre-training optimizes the detection backbone to capture holistic visual abstraction, and box-domain pre-training learns instance-level semantics and task-aware concepts to initialize the parts out of the backbone. By incorporating the self-supervised pre-trained backbones, we can pre-train all modules for various detectors in an unsupervised paradigm. The extensive experiments demonstrate that AlignDet can achieve significant improvements across diverse protocols, such as detection algorithm, model backbone, data setting, and training schedule. For example, AlignDet improves FCOS by 5.3 mAP, RetinaNet by 2.1 mAP, Faster R-CNN by 3.3 mAP, and DETR by 2.3 mAP under fewer epochs.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+  </div>
+</section>
+
+
+<!-- Comparison -->
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <h2 class="title is-3">Advantages of AlignDet in terms of Data, Model and Task.</h2>
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img src="./static/images/comparison.bmp"
+                   class="interpolation-image"
+                   alt="Interpolate start reference image."/>
+        <h2 class="subtitle has-text-centered">
+          <span class="dnerf"></span> Comparison with other self-supervised pre-training methods on data, models and tasks aspects.<br>AlignDet achieves more efficient, adequate and detection-oriented pre-training.
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Comparison -->
+
+
+<!-- Pipeline -->
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <h2 class="title is-3">Pipeline</h2>
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img src="./static/images/pipeline.bmp"
+                   class="interpolation-image"
+                   alt="Interpolate start reference image."/>
+        <h2 class="subtitle has-text-centered">
+          <span class="dnerf"></span> AlignDet decouples the pre-training into the image domain and the box domain.<br>The decoupled design contributes to simple, efficient, and adequate self-supervised pre-training.
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Pipeline -->
+
+<!-- Results -->
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <h2 class="title is-3">Improvements Across Different Settings</h2>
+
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <!-- COCO 12k & 90k. -->
+        <img src="./static/images/coco_12k_90k.bmp"
+        class="interpolation-image"
+        alt="Interpolate start reference image."/>
+        <!-- Different backbones, SOTA, transfer learning, baseline. -->
+        <img src="./static/images/results_part1.bmp"
+        class="interpolation-image"
+        alt="Interpolate start reference image."/>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!--/ Results -->
+
+
+<!-- Comparison -->
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <h2 class="title is-3">AlignDet Outperforms Other Pre-training Methods</h2>
+
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <!-- Comparison with other pre-training methods. -->
+        <img src="./static/images/results_part2.bmp"
+        class="interpolation-image"
+        alt="Interpolate start reference image."/>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!--/ Comparison -->
+
+
+<!-- Effect of AlignDet Pre-training -->
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <h2 class="title is-3">AlignDet Learns Good Classification and Regression Priors</h2>
+
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <!-- Comparison with other pre-training methods. -->
+        <img src="./static/images/visualization.bmp"
+        class="interpolation-image"
+        alt="Interpolate start reference image."/>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!--/ Effect of AlignDet Pre-training -->
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{aligndet,
+      title={AlignDet: Aligning Pre-training and Fine-tuning in Object Detection},
+      author={Ming Li and Jie Wu and Xionghui Wang and Chen Chen and Jie Qin and Xuefeng Xiao and Rui Wang and Min Zheng and Xin Pan},
+      journal={arXiv preprint arXiv:2307.11077},
+      year={2019}
+    }
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            The template is borrowed from the <a
+              href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
