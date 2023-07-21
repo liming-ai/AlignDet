@@ -10,7 +10,7 @@ custom_hooks = [
     dict(type='MomentumUpdateHook'),
     dict(type='MMDetWandbHook',
              init_kwargs={
-                'project': 'I2B',
+                'project': 'AlignDet',
                 'group': 'pretrain'},
              interval=50,
              num_eval_images=0,
@@ -20,7 +20,7 @@ custom_hooks = [
 load_pipeline = [
     dict(type='LoadImageFromFile'),
     dict(type='LoadAnnotations', with_bbox=True, with_mask=False),
-    dict(type='SelectTopKProposals', topk=80)  # avoid GPU out of memory, -1 means load all proposals.
+    dict(type='SelectTopKProposals', topk=50)  # avoid GPU out of memory, -1 means load all proposals.
 ]
 
 data = dict(train=dict(dataset=dict(pipeline=load_pipeline)))

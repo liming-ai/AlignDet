@@ -64,26 +64,3 @@ class SelfSupStandardRoIHead(StandardRoIHead):
             x, sampling_results, gt_bboxes, gt_labels, img_metas)
 
         return bbox_results, bbox_targets, rois
-
-    @force_fp32(apply_to=('online_output'))
-    def loss(self, online_output, target_output, online_info, target_info):
-        online_bbox_results, online_bbox_targets, online_rois = online_output
-        target_bbox_results, target_bbox_targets, _ = target_output
-
-        # bbox_results: dict
-        # dict_keys(['cls_score', 'bbox_pred', 'bbox_feats'])
-
-        # bbox_targets: tuple
-        # (labels, label_weights, bbox_targets, bbox_weights)
-
-        losses = dict()
-        if self.with_bbox:
-            loss_bbox = self.bbox_head.loss(
-                online_bbox_results,
-                target_bbox_results,
-                online_bbox_targets,
-                target_bbox_targets,
-                online_rois)
-            losses.update(loss_bbox)
-
-        return losses
