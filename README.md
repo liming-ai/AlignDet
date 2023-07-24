@@ -98,7 +98,7 @@ If you find our work to be useful for your research, please consider citing.
 @inproceedings{aligndet,
   title={AlignDet: Aligning Pre-training and Fine-tuning in Object Detection},
   author={Li, Ming and Wu, Jie and Wang, Xionghui and Chen, Chen and Qin, Jie and Xiao, Xuefeng and Wang, Rui and Zheng, Min and Pan, Xin},
-  booktitle={Proceedings of the IEEE International Conference on Computer Vision},
+  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
   year={2023}
 }
 ```
