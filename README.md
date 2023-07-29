@@ -1,4 +1,4 @@
-# AlignDet: Aligning Pre-training and Fine-tuning in Object Detection [[Project Page]](https://liming-ai.github.io/AlignDet/)
+# Aligning Pre-training and Fine-tuning in Object Detection [[Project Page]](https://liming-ai.github.io/AlignDet/)
 Official PyTorch Implementation of [AlignDet: Aligning Pre-training and Fine-tuning in Object Detection (ICCV 2023)](https://arxiv.org/abs/2307.11077)
 * Existing detection algorithms are constrained by the data, model, and task discrepancies between pre-training and fine-tuning.
 * AlignDet aligns these discrepancies in an efficient and unsupervised paradigm, leading to significant performance improvements across different settings.
@@ -38,7 +38,7 @@ The folder `semi_supervised_annotations` for semi-supervised fine-tuning can be 
 pip3 install -r requirements.txt
 ```
 
-## Pre-training and Fine-tuning
+## Pre-training and Fine-tuning Instructions
 ### Pre-training
 ```bash
 bash tools/dist_train.sh configs/selfsup/mask_rcnn.py 8 --work-dir work_dirs/selfsup_mask-rcnn
@@ -60,19 +60,12 @@ optimizer.lr=3e-2 optimizer.weight_decay=5e-5  \ # adjust lr and wd
 --work-dir work_dirs/finetune_mask-rcnn_1x_coco_lr3e-2_wd5e-5
 ```
 
-## TODO
-- [x] Code release.
-- [x] Environment preparation tutorial.
-- [x] Release json files used for pre-training and semi-supervised fine-tuning.
-- [x] Release all the checkpoints and logs.
-- [ ] Update HuggingFace README
-
 ## Checkpoints and Logs
-Here we list part of the results, but **all the checkpoints and logs can be found in [the HuggingFace Space](https://huggingface.co/spaces/limingcv/AlignDet/tree/main).**
+We show part of the results here, and **all the checkpoints & logs can be found in [the HuggingFace Space](https://huggingface.co/spaces/limingcv/AlignDet/tree/main).**
 
 
-### Different methods
-| Method (Backbone) | Pre-training (1x) | Fine-tuning (1x) |
+### Different Methods
+| Method (Backbone) | Pre-training | Fine-tuning |
 |:------------------------:|:-----------------------:|:----------------:|
 | FCOS (R50)               |  [link](https://huggingface.co/spaces/limingcv/AlignDet/tree/main/pretrain/selfsup_fcos_mstrain-soft-teacher_sampler-2048_temp0.5)  |   [link](https://huggingface.co/spaces/limingcv/AlignDet/tree/main/finetune/finetune_fcos_1x_coco_lr1.5e-2_wd5e.5)    |
 | RetinaNet (R50)          |  [link](https://huggingface.co/spaces/limingcv/AlignDet/tree/main/pretrain/selfsup_retinanet_mstrain-soft-teacher_sampler-2048_temp0.5) | [link](https://huggingface.co/spaces/limingcv/AlignDet/tree/main/finetune/finetune_retinanet_1x_coco_lr1.5e-2_wd5e-5) |
@@ -83,7 +76,7 @@ Here we list part of the results, but **all the checkpoints and logs can be foun
 | CBNet v2 (Swin-L)        |  [link](https://huggingface.co/spaces/limingcv/AlignDet/tree/main/pretrain/selfsup_cbv2_swin-L_1x_coco) | [link](https://huggingface.co/spaces/limingcv/AlignDet/tree/main/finetune/finetune_cbnetv2_swin-L_bs128_1x_coco_lr8e-4_wd2.5e-3) |
 
 
-### Mask R-CNN with different backbones sizes
+### Mask R-CNN with Different Backbones Sizes
 | Backbone | Pre-training | Fine-tuning |
 |:--------------------:|:-----------------------:|:----------------:|
 | MobileNet v2         | [link](https://huggingface.co/spaces/limingcv/AlignDet/tree/main/pretrain/selfsup_mask-rcnn_mbv2_mstrain-soft-teacher_1x_coco_sampler-4096_temp0.5) | [link](https://huggingface.co/spaces/limingcv/AlignDet/tree/main/finetune/finetune_mask-rcnn_mbv2_1x_coco) |
@@ -91,11 +84,11 @@ Here we list part of the results, but **all the checkpoints and logs can be foun
 | Swin-Small           | [link](https://huggingface.co/spaces/limingcv/AlignDet/tree/main/pretrain/selfsup_mask-rcnn_swin-s_mstrain-soft-teacher_sampler-4096_temp0.5) | [link](https://huggingface.co/spaces/limingcv/AlignDet/tree/main/finetune/finetune_mask-rcnn_swin-s_1x_coco) |
 | Swin-Base            | [link](https://huggingface.co/spaces/limingcv/AlignDet/tree/main/pretrain/selfsup_mask-rcnn_swin-b_mstrain-soft-teacher_sampler-4096_temp0.5) | [link](https://huggingface.co/spaces/limingcv/AlignDet/tree/main/finetune/finetune_mask-rcnn_swin-b_1x_coco_lr1e-4_wd1e-2) |
 
-### Models with self-supervised ResNet-50 backbone
+### Models with Self-supervised Backbones (ResNet-50)
 | Mask R-CNN | Pre-training | Fine-tuning |
 |:--------------------:|:-----------------------:|:----------------:|
-| MoCo v2    | TODO | [link](https://huggingface.co/spaces/limingcv/AlignDet/tree/main/finetune/finetune_mask-rcnn_1x_coco_mocov2-init_moco-setting) |
-| PixPro     | TODO | [link](https://huggingface.co/spaces/limingcv/AlignDet/tree/main/finetune/finetune_mask-rcnn_1x_coco_pixpro-init_moco-setting) |
+| MoCo v2    | [link](https://huggingface.co/spaces/limingcv/AlignDet/tree/main/finetune/finetune_mask-rcnn_1x_coco_mocov2-init_moco-setting) | [link](https://huggingface.co/spaces/limingcv/AlignDet/tree/main/finetune/finetune_mask-rcnn_1x_coco_mocov2-init_moco-setting) |
+| PixPro     | [link](https://huggingface.co/spaces/limingcv/AlignDet/tree/main/finetune/finetune_mask-rcnn_1x_coco_pixpro-init_moco-setting) | [link](https://huggingface.co/spaces/limingcv/AlignDet/tree/main/finetune/finetune_mask-rcnn_1x_coco_pixpro-init_moco-setting) |
 | SwAV       | [link](https://huggingface.co/spaces/limingcv/AlignDet/tree/main/pretrain/selfsup_mask-rcnn_1x_coco_swav) | [link](https://huggingface.co/spaces/limingcv/AlignDet/tree/main/finetune/finetune_mask-rcnn_1x_coco_swav_lr3e-2_wd5e-6_warmup1k) |
 | **RetinaNet** | **Pre-training** | **Fine-tuning** |
 | MoCo v2 | [link](https://huggingface.co/spaces/limingcv/AlignDet/tree/main/pretrain/selfsup_retinanet_1x_coco_mocov2) | [link](https://huggingface.co/spaces/limingcv/AlignDet/tree/main/finetune/finetune_retinanet_1x_coco_mocov2_moco-setting_lr1.5e-2_wd5e-5) |
@@ -103,6 +96,13 @@ Here we list part of the results, but **all the checkpoints and logs can be foun
 | SwAV    | [link](https://huggingface.co/spaces/limingcv/AlignDet/tree/main/pretrain/selfsup_retinanet_1x_coco_swav) | [link](https://huggingface.co/spaces/limingcv/AlignDet/tree/main/finetune/finetune_retinanet_1x_coco_swav_moco-setting_lr1.5e-2_wd5e-5) |
 
 
+### Transfer Learning on VOC Dataset
+| Method | Fine-tuning |
+|:--------------------:|:-----------------------:|
+| FCOS | [link](https://huggingface.co/spaces/limingcv/AlignDet/tree/main/finetune/finetune_fcos_12k_voc0712_lr1.5e-2_wd5e-5) |
+| RetinaNet | [link](https://huggingface.co/spaces/limingcv/AlignDet/tree/main/finetune/finetune_retinanet_12k_voc0712_lr1.5e-2_wd5e-5) |
+| Faster R-CNN | [link](https://huggingface.co/spaces/limingcv/AlignDet/tree/main/finetune/finetune_mask-rcnn_12k_voc0712_lr3e-2_wd5e-5) |
+| DETR | [link](https://huggingface.co/spaces/limingcv/AlignDet/tree/main/finetune/finetune_detr_100e_voc0712) |
 
 ## Citation
 If you find our work to be useful for your research, please consider citing.
