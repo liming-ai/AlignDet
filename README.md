@@ -67,7 +67,7 @@ optimizer.lr=3e-2 optimizer.weight_decay=5e-5  \ # adjust lr and wd
 - [ ] Release all the checkpoints and logs.
 
 ## Checkpoints and Logs (TODO)
-All the checkpoints and logs will be uploaded to [this Google Drive Folder](https://drive.google.com/drive/folders/1bLCNViQ3JT0Al_7LK0Xyixh1PrdkyM0-?usp=sharing).
+All the checkpoints and logs has been uploaded to [the HuggingFace Space](https://huggingface.co/spaces/limingcv/AlignDet/tree/main).
 
 
 ### Different methods
