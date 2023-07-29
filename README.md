@@ -68,7 +68,7 @@ optimizer.lr=3e-2 optimizer.weight_decay=5e-5  \ # adjust lr and wd
 - [ ] Update HuggingFace README
 
 ## Checkpoints and Logs
-Here we only show some of the results, but **all the checkpoints and logs can be found in [the HuggingFace Space](https://huggingface.co/spaces/limingcv/AlignDet/tree/main).**
+Here we list part of the results, but **all the checkpoints and logs can be found in [the HuggingFace Space](https://huggingface.co/spaces/limingcv/AlignDet/tree/main).**
 
 
 ### Different methods
@@ -94,8 +94,8 @@ Here we only show some of the results, but **all the checkpoints and logs can be
 ### Models with self-supervised ResNet-50 backbone
 | Mask R-CNN | Pre-training | Fine-tuning |
 |:--------------------:|:-----------------------:|:----------------:|
-| MoCo v2    | [TODO]() | [link](https://huggingface.co/spaces/limingcv/AlignDet/tree/main/finetune/finetune_mask-rcnn_1x_coco_mocov2-init_moco-setting) |
-| PixPro     | [TODO]() | [link](https://huggingface.co/spaces/limingcv/AlignDet/tree/main/finetune/finetune_mask-rcnn_1x_coco_pixpro-init_moco-setting) |
+| MoCo v2    | TODO | [link](https://huggingface.co/spaces/limingcv/AlignDet/tree/main/finetune/finetune_mask-rcnn_1x_coco_mocov2-init_moco-setting) |
+| PixPro     | TODO | [link](https://huggingface.co/spaces/limingcv/AlignDet/tree/main/finetune/finetune_mask-rcnn_1x_coco_pixpro-init_moco-setting) |
 | SwAV       | [link](https://huggingface.co/spaces/limingcv/AlignDet/tree/main/pretrain/selfsup_mask-rcnn_1x_coco_swav) | [link](https://huggingface.co/spaces/limingcv/AlignDet/tree/main/finetune/finetune_mask-rcnn_1x_coco_swav_lr3e-2_wd5e-6_warmup1k) |
 | **RetinaNet** | **Pre-training** | **Fine-tuning** |
 | MoCo v2 | [link](https://huggingface.co/spaces/limingcv/AlignDet/tree/main/pretrain/selfsup_retinanet_1x_coco_mocov2) | [link](https://huggingface.co/spaces/limingcv/AlignDet/tree/main/finetune/finetune_retinanet_1x_coco_mocov2_moco-setting_lr1.5e-2_wd5e-5) |
