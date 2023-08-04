@@ -60,7 +60,7 @@ model = dict(
             query_init_path=None,
             obj_assigner=dict(
                 type='HungarianAssigner',
-                cls_cost=dict(type='ZeroCost', weight=0),  # only use coordinate for instance-level assignment
+                cls_cost=dict(type='ClassificationCost', weight=1.0),
                 reg_cost=dict(type='BBoxL1Cost', weight=5.0, box_format='xywh'),
                 iou_cost=dict(type='IoUCost', iou_mode='giou', weight=2.0))
         ),
