@@ -1,4 +1,4 @@
-# Aligning Pre-training and Fine-tuning in Object Detection [[Project Page]](https://liming-ai.github.io/AlignDet/) [[arXiv]](https://arxiv.org/abs/2307.11077) [[Paper]](https://arxiv.org/pdf/2307.11077.pdf)
+# Aligning Pre-training and Fine-tuning in Object Detection [[Project Page]](https://liming-ai.github.io/AlignDet/) [[arXiv]](https://arxiv.org/abs/2307.11077) [[Paper]](https://arxiv.org/pdf/2307.11077.pdf) [[Poster]](https://github.com/liming-ai/AlignDet/blob/page/static/images/Poster_AlignDet.pdf)
 Official PyTorch Implementation of [AlignDet: Aligning Pre-training and Fine-tuning in Object Detection (ICCV 2023)](https://arxiv.org/abs/2307.11077)
 * Existing detection algorithms are constrained by the data, model, and task discrepancies between pre-training and fine-tuning.
 * AlignDet aligns these discrepancies in an efficient and unsupervised paradigm, leading to significant performance improvements across different settings.
