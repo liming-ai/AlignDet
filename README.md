@@ -107,10 +107,10 @@ We show part of the results here, and **all the checkpoints & logs can be found 
 ## Citation
 If you find our work to be useful for your research, please consider citing.
 ```
-@inproceedings{aligndet,
-  title={AlignDet: Aligning Pre-training and Fine-tuning in Object Detection},
-  author={Li, Ming and Wu, Jie and Wang, Xionghui and Chen, Chen and Qin, Jie and Xiao, Xuefeng and Wang, Rui and Zheng, Min and Pan, Xin},
-  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
-  year={2023}
+@InProceedings{AlignDet,
+    author    = {Li, Ming and Wu, Jie and Wang, Xionghui and Chen, Chen and Qin, Jie and Xiao, Xuefeng and Wang, Rui and Zheng, Min and Pan, Xin},
+    title     = {AlignDet: Aligning Pre-training and Fine-tuning in Object Detection},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    year      = {2023},
 }
 ```
